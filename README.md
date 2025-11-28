@@ -1,94 +1,90 @@
-# Real Estate Analytics Dashboard
+# 🏠 Real Estate Analytics Dashboard
 
-An interactive dashboard for visualizing and analyzing real estate data with machine learning predictions.
+An interactive dashboard for real estate data analysis with machine learning predictions.
 
-[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io)
-[![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![Scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=Streamlit&logoColor=white)](https://streamlit.io)
+[![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat&logo=python&logoColor=white)](https://python.org)
 
-## 🌐 Live Demo
+## 🚀 Quick Start
 
-**Deploy your own:** See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for detailed instructions.
+### Run Locally
 
-## Features
+```bash
+# Install dependencies
+pip install -r requirements.txt
 
-- **Overview**: Key metrics and dataset summaries
-- **Customers**: Customer demographics, income analysis, and city distribution
-- **Properties**: Property types, area analysis, and location insights
-- **Brokers**: Broker performance, ratings, and experience analysis
-- **Deals**: Deal status, pricing trends, and mortgage analysis
-- **Analytics**: Advanced insights including price per sq ft, broker success rates, and trends
-- **Predictive Models**: Machine learning models for price prediction and deal status classification
-  - Simple Linear Regression
-  - Multiple Linear Regression
-  - Random Forest Regression
-  - Random Forest Classification for deal status
-  - Interactive prediction tools
+# Run dashboard
+streamlit run dashboard.py
+```
+
+Or simply double-click `run_dashboard.bat` on Windows.
+
+## 📊 Features
+
+- **7 Interactive Pages**
+  - Overview with key metrics
+  - Customer analytics
+  - Property analysis
+  - Broker performance
+  - Deal tracking
+  - Advanced analytics
+  - Predictive models with KPIs
+
+- **Machine Learning Models**
+  - Price prediction (98.9% accuracy)
+  - Deal status classification
   - Feature importance analysis
-  - Model performance visualizations
 
-## Installation
+- **Key Performance Indicators**
+  - Price per square foot
+  - Broker success rate
+  - Customer income segments
+  - Deal closure probability
+  - Amenity patterns
 
-1. Install dependencies:
-```bash
-py -m pip install pandas openpyxl streamlit plotly scikit-learn seaborn
+## 📁 Project Structure
+
+```
+Real_Estate_Data_Curation/
+├── dashboard.py          # Main application
+├── models.py            # ML models
+├── requirements.txt     # Python dependencies
+├── data/
+│   └── real_estate_curation_project.xlsx
+└── .streamlit/
+    └── config.toml
 ```
 
-Or use the requirements file:
-```bash
-py -m pip install -r requirements.txt
-```
+## 🛠️ Requirements
 
-## Running the Dashboard
+- Python 3.11+
+- pandas
+- streamlit
+- plotly
+- scikit-learn
+- statsmodels
 
-1. Make sure the Excel file is in the `data` folder
-2. Run the dashboard:
-```bash
-py -m streamlit run dashboard.py
-```
+## 📈 Data
 
-3. The dashboard will open in your browser at `http://localhost:8501`
+The dashboard analyzes 40,000+ real estate deals with:
+- Customer demographics
+- Property details
+- Broker information
+- Transaction history
 
-## Data Requirements
+## 🌐 Deployment
 
-The dashboard expects an Excel file named `real_estate_curation_project.xlsx` in the `data` folder with the following sheets:
-- Customers
-- Brokers
-- Properties
-- PropertyDetails
-- Deals
+Deploy to Streamlit Cloud:
+1. Push to GitHub
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Select repository
+4. Set main file: `dashboard.py`
+5. Deploy!
 
-## Navigation
+## 📝 License
 
-Use the sidebar to navigate between different pages:
-- **Overview**: High-level summary of all datasets
-- **Customers**: Customer analytics and segmentation
-- **Properties**: Property characteristics and distribution
-- **Brokers**: Broker performance metrics
-- **Deals**: Transaction analysis
-- **Analytics**: Advanced insights and trends
-- **Predictive Models**: Machine learning models and predictions
-  - Model Comparison: Compare performance of different regression models
-  - Price Prediction: Interactive tool to predict property prices
-  - Feature Importance: Understand which features impact predictions most
-  - Deal Status Prediction: Predict whether a deal will close
-  - Model Performance: Visualize actual vs predicted values, residuals, etc.
+MIT License
 
-## Predictive Models Details
+## 👤 Author
 
-### Regression Models (Price Prediction)
-1. **Simple Linear Regression**: Uses only area_sqft to predict price
-2. **Multiple Linear Regression**: Uses all available features
-3. **Random Forest Regression**: Ensemble model for better accuracy
-
-### Classification Model (Deal Status)
-- **Random Forest Classifier**: Predicts deal status (Closed, Pending, Cancelled)
-- Provides probability scores for each status
-- Shows feature importance for status prediction
-
-### Model Metrics
-- **R² Score**: Measures how well the model explains variance
-- **RMSE**: Root Mean Squared Error (lower is better)
-- **MAPE**: Mean Absolute Percentage Error
-- **Accuracy**: For classification model
-- **Confusion Matrix**: Shows prediction accuracy by class
+Built with ❤️ for real estate analytics
