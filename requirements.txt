@@ -4,4 +4,5 @@ streamlit
 plotly
 numpy
 scikit-learn
+statsmodels
 seaborn
