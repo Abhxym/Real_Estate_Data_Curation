@@ -64,6 +64,18 @@ def prepare_data(dataframes):
     return dataframes
 
 def main():
+    # Debug info for Streamlit Cloud
+    import os
+    if not os.path.exists('data/real_estate_curation_project.xlsx'):
+        st.error("❌ Excel file not found!")
+        st.info(f"Current directory: {os.getcwd()}")
+        st.info(f"Files in current dir: {os.listdir('.')}")
+        if os.path.exists('data'):
+            st.info(f"Files in data/: {os.listdir('data')}")
+        else:
+            st.error("data/ folder not found!")
+        st.stop()
+    
     st.title("🏠 Real Estate Analytics Dashboard")
     st.markdown("---")
     
