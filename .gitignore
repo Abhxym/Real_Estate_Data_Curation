@@ -23,6 +23,14 @@ wheels/
 .installed.cfg
 *.egg
 
+# Virtual Environment folders
+Lib/
+Scripts/
+share/
+etc/
+Include/
+pyvenv.cfg
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
@@ -53,6 +61,12 @@ desktop.ini
 # Streamlit
 .streamlit/secrets.toml
 
-# Data (if you don't want to commit large files)
-# data/*.xlsx
-# data/*.csv
+# Deployment test files
+dashboard_simple.py
+test_dashboard.py
+test_models.py
+verify_deployment.bat
+verify_deployment.ps1
+
+# Duplicate Excel file in root (keep only in data/)
+real_estate_curation_project.xlsx
