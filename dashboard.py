@@ -32,12 +32,25 @@ st.markdown("""
 @st.cache_data
 def load_data():
     """Load and process data from Excel file"""
+    import os
     try:
         excel_file = 'data/real_estate_curation_project.xlsx'
+        
+        # Debug: Check if file exists
+        if not os.path.exists(excel_file):
+            st.error(f"❌ Excel file not found at: {excel_file}")
+            st.info(f"Current directory: {os.getcwd()}")
+            st.info(f"Files in current dir: {os.listdir('.')[:10]}")  # Show first 10 files
+            if os.path.exists('data'):
+                st.info(f"Files in data/: {os.listdir('data')}")
+            return None
+        
         dataframes = pd.read_excel(excel_file, sheet_name=None)
         return dataframes
     except Exception as e:
         st.error(f"Error loading data: {e}")
+        import traceback
+        st.code(traceback.format_exc())
         return None
 
 def clean_city_names(df, city_mapping):
@@ -64,18 +77,6 @@ def prepare_data(dataframes):
     return dataframes
 
 def main():
-    # Debug info for Streamlit Cloud
-    import os
-    if not os.path.exists('data/real_estate_curation_project.xlsx'):
-        st.error("❌ Excel file not found!")
-        st.info(f"Current directory: {os.getcwd()}")
-        st.info(f"Files in current dir: {os.listdir('.')}")
-        if os.path.exists('data'):
-            st.info(f"Files in data/: {os.listdir('data')}")
-        else:
-            st.error("data/ folder not found!")
-        st.stop()
-    
     st.title("🏠 Real Estate Analytics Dashboard")
     st.markdown("---")
     
